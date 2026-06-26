@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="InsightStack Solutions LLP — Data analysis, data engineering, business intelligence and AWS cloud expertise that turns raw data into measurable outcomes." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>InsightStack Solutions — Data, Engineered for Outcomes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link href="styles.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: { 950: '#ffffff', 900: '#f8fbff', 800: '#eef4fc', 700: '#ddeaf8', 600: '#c5d9f0' },
+            accent: { DEFAULT: '#2b80d4', soft: '#6aaee8', cyan: '#a8c8e8', lime: '#4db8f0' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+          },
+          letterSpacing: { tightish: '-0.02em', tighter2: '-0.04em' },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="mesh-bg grain antialiased overflow-x-hidden">
+
+  <!-- ============================== NAV ============================== -->
+  <header id="nav" class="nav fixed inset-x-0 top-0 z-50 px-4 sm:px-6 py-3 sm:py-4">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between">
+      <a href="#top" class="group flex items-center gap-3">
+        <img src="Logo.jpg" alt="InsightStack Solutions logo" class="h-20 w-auto object-contain" />
+      </a>
+
+      <ul class="hidden md:flex items-center gap-7 text-sm text-slate-700">
+        <li><a class="hover:text-[#2b80d4] transition" href="#about">About</a></li>
+        <li><a class="hover:text-[#2b80d4] transition" href="#services">Services</a></li>
+        <li><a class="hover:text-[#2b80d4] transition" href="#work">Work</a></li>
+        <li><a class="hover:text-[#2b80d4] transition" href="#usecases">Use Cases</a></li>
+        <li><a class="hover:text-[#2b80d4] transition" href="#process">Process</a></li>
+        <li><a class="hover:text-[#2b80d4] transition" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href="#contact" class="hidden sm:inline-flex btn btn-ghost text-xs">
+          <span class="blip"></span> Available for projects
+        </a>
+        <a href="#contact" class="btn btn-primary text-xs">Book a call
+          <svg viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="relative z-0">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="relative min-h-[100svh] flex items-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
+      <div class="absolute inset-0 grid-floor opacity-70 pointer-events-none"></div>
+      <canvas id="particles" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+
+      <div class="relative mx-auto max-w-7xl w-full">
+        <!-- Tag chip -->
+        <div class="reveal flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-slate-600 mb-6">
+          <span class="inline-flex h-1.5 w-1.5 rounded-full bg-accent-lime"></span>
+          <span>Hyderabad · Est. 2024 · Data &amp; Cloud Studio</span>
+        </div>
+
+        <h1 class="reveal reveal-delay-1 text-[clamp(2.5rem,7vw,6.5rem)] font-semibold leading-[0.95] tracking-tighter2 max-w-5xl">
+          Data, engineered <br />
+          for <span class="grad-text">measurable outcomes.</span>
+        </h1>
+
+        <p class="reveal reveal-delay-2 mt-7 max-w-2xl text-lg sm:text-xl text-slate-700 leading-relaxed">
+          We help ambitious teams move from spreadsheets and dashboards no one trusts to
+          <em class="font-serif text-[#1b2d5e] font-semibold">reliable pipelines, sharp analytics</em> and a cloud foundation that compounds.
+        </p>
+
+        <div class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-3">
+          <a href="#contact" class="btn btn-primary">
+            Book a free consultation
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#services" class="btn btn-ghost">
+            See what we do
+          </a>
+          <a href="tel:+919700552359" class="ml-2 text-sm text-slate-600 hover:text-[#2b80d4] transition flex items-center gap-2">
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.77.64 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.21a2 2 0 0 1 2.11-.45c.83.3 1.7.52 2.6.64A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            +91 97005 52359
+          </a>
+        </div>
+
+        <!-- Hero stat row -->
+        <div class="reveal reveal-delay-3 mt-16 sm:mt-24 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-4xl">
+          <div>
+            <div class="ticker text-3xl sm:text-4xl font-semibold tracking-tightish" data-counter data-target="9" data-suffix="+">0</div>
+            <div class="mt-1 text-xs uppercase tracking-wider text-slate-600">Years in data &amp; BI</div>
+          </div>
+          <div>
+            <div class="ticker text-3xl sm:text-4xl font-semibold tracking-tightish" data-counter data-target="9" data-suffix="">0</div>
+            <div class="mt-1 text-xs uppercase tracking-wider text-slate-600">Enterprise platforms shipped</div>
+          </div>
+          <div>
+            <div class="ticker text-3xl sm:text-4xl font-semibold tracking-tightish" data-counter data-target="20" data-suffix="x">0</div>
+            <div class="mt-1 text-xs uppercase tracking-wider text-slate-600">Faster analytics delivered</div>
+          </div>
+          <div>
+            <div class="ticker text-3xl sm:text-4xl font-semibold tracking-tightish" data-counter data-target="35" data-suffix="%">0</div>
+            <div class="mt-1 text-xs uppercase tracking-wider text-slate-600">Avg. metric lift for clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-slate-600 flex flex-col items-center gap-2">
+        <span>Scroll</span>
+        <span class="block h-8 w-px bg-gradient-to-b from-slate-500 to-transparent"></span>
+      </div>
+    </section>
+
+    <!-- ============================== TRUST MARQUEE ============================== -->
+    <section class="border-y border-[#2b80d4]/15 bg-ink-950/50 py-7">
+      <div class="text-center text-[10px] uppercase tracking-[0.3em] text-slate-600 mb-5">Stack we live in</div>
+      <div class="marquee">
+        <div class="marquee-track text-slate-700 text-xl sm:text-2xl font-serif">
+          <span>Python</span><span>·</span>
+          <span>SQL</span><span>·</span>
+          <span>dbt</span><span>·</span>
+          <span>AWS</span><span>·</span>
+          <span>Redshift</span><span>·</span>
+          <span>Snowflake</span><span>·</span>
+          <span>AWS Glue</span><span>·</span>
+          <span>QuickSight</span><span>·</span>
+          <span>Tableau</span><span>·</span>
+          <span>Power BI</span><span>·</span>
+          <span>Looker</span><span>·</span>
+          <span>SageMaker</span><span>·</span>
+          <span>Spark</span><span>·</span>
+          <span>Kafka</span><span>·</span>
+          <span>Teradata</span><span>·</span>
+          <span>SingleStore</span><span>·</span>
+          <span>SAP Data Services</span><span>·</span>
+          <span>Terraform</span><span>·</span>
+        </div>
+        <div class="marquee-track text-slate-700 text-xl sm:text-2xl font-serif" aria-hidden="true">
+          <span>Python</span><span>·</span>
+          <span>SQL</span><span>·</span>
+          <span>dbt</span><span>·</span>
+          <span>AWS</span><span>·</span>
+          <span>Redshift</span><span>·</span>
+          <span>Snowflake</span><span>·</span>
+          <span>AWS Glue</span><span>·</span>
+          <span>QuickSight</span><span>·</span>
+          <span>Tableau</span><span>·</span>
+          <span>Power BI</span><span>·</span>
+          <span>Looker</span><span>·</span>
+          <span>SageMaker</span><span>·</span>
+          <span>Spark</span><span>·</span>
+          <span>Kafka</span><span>·</span>
+          <span>Teradata</span><span>·</span>
+          <span>SingleStore</span><span>·</span>
+          <span>SAP Data Services</span><span>·</span>
+          <span>Terraform</span><span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SERVICES ============================== -->
+    <section id="services" class="relative py-28 sm:py-36 px-4 sm:px-6">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <div class="reveal text-xs uppercase tracking-[0.25em] text-accent-soft mb-3">02 · Services</div>
+            <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tighter2 max-w-3xl">
+              Four practices,<br /><span class="grad-thin">one outcome</span>: decisions you trust.
+            </h2>
+          </div>
+          <p class="reveal reveal-delay-2 max-w-sm text-slate-600 text-sm leading-relaxed">
+            We don&apos;t sell tools — we deliver outcomes. Each engagement starts with a 2-week audit and ends with measurable lift on a metric you care about.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 sm:gap-6">
+          <!-- Card 1 -->
+          <article class="reveal card-glow glass rounded-3xl p-7 sm:p-9 group">
+            <div class="flex items-start justify-between mb-8">
+              <div class="orbit">
+                <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-soft"><path d="M3 3v18h18M7 14l4-4 4 4 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="text-xs text-slate-600 font-mono">/01</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold tracking-tightish mb-3">Data Analysis</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-7">
+              Turn raw signals into the three numbers your leadership actually reviews. Cohort retention, attribution, anomaly detection — delivered as living dashboards, not slide decks.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700">
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-soft"></span> Self-serve dashboards in Tableau, Power BI, Looker</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-soft"></span> Statistical modelling &amp; experiment readouts</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-soft"></span> KPI definitions reviewed quarterly</li>
+            </ul>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="reveal reveal-delay-1 card-glow glass rounded-3xl p-7 sm:p-9 group">
+            <div class="flex items-start justify-between mb-8">
+              <div class="orbit">
+                <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-cyan"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="19" cy="17" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+              </div>
+              <span class="text-xs text-slate-600 font-mono">/02</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold tracking-tightish mb-3">Data Engineering</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-7">
+              ETL/ELT pipelines that don&apos;t silently fail at 3am. We build with dbt, Airflow and event streams so every metric has a paper trail from source to dashboard.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700 mb-7">
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-cyan"></span> Scalable pipelines with PySpark, Airflow &amp; dbt</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-cyan"></span> Cloud warehousing &amp; unified analytics on Snowflake &amp; Databricks</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-cyan"></span> Schema contracts, data quality testing &amp; CI/CD</li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#2b80d4]/8 border border-[#2b80d4]/20 text-slate-600">PySpark</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#2b80d4]/8 border border-[#2b80d4]/20 text-slate-600">Airflow</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#2b80d4]/8 border border-[#2b80d4]/20 text-slate-600">Snowflake</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#2b80d4]/8 border border-[#2b80d4]/20 text-slate-600">Databricks</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="reveal card-glow glass rounded-3xl p-7 sm:p-9 group">
+            <div class="flex items-start justify-between mb-8">
+              <div class="orbit">
+                <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-lime"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <span class="text-xs text-slate-600 font-mono">/03</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold tracking-tightish mb-3">Business Intelligence</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-7">
+              Beyond charts. We build the semantic layer, governance and review cadence that makes BI a habit instead of a quarterly fire drill.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700">
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-lime"></span> Semantic layer in dbt / LookML / Cube</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-lime"></span> Executive scorecards &amp; weekly readouts</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent-lime"></span> Row-level security &amp; access reviews</li>
+            </ul>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="reveal reveal-delay-1 card-glow glass rounded-3xl p-7 sm:p-9 group">
+            <div class="flex items-start justify-between mb-8">
+              <div class="orbit">
+                <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent"><path d="M17 18a4 4 0 0 0 0-8 6 6 0 0 0-11-2 5 5 0 0 0-1 10h12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="text-xs text-slate-600 font-mono">/04</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold tracking-tightish mb-3">AWS Cloud Services</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-7">
+              From a Redshift cluster you can actually afford to multi-account Terraform with sane defaults. We make AWS feel like a tool, not a maze.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700">
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent"></span> Redshift / S3 / Glue / Lambda architectures</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent"></span> Cost &amp; query-pattern optimisation</li>
+              <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-accent"></span> IaC with Terraform &amp; CI guardrails</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PROCESS ============================== -->
+    <section id="process" class="relative py-28 sm:py-36 px-4 sm:px-6 bg-ink-950/50 border-y border-[#2b80d4]/15">
+      <div class="mx-auto max-w-7xl grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-5 md:sticky md:top-28 md:self-start">
+          <div class="reveal text-xs uppercase tracking-[0.25em] text-accent-soft mb-3">03 · How we work</div>
+          <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl font-semibold tracking-tighter2 leading-tight">
+            A process<br />engineered for <span class="grad-thin">trust.</span>
+          </h2>
+          <p class="reveal reveal-delay-2 mt-5 text-slate-600 max-w-md leading-relaxed">
+            Every engagement follows the same four phases. No vague proposals, no surprise invoices — every milestone has a deliverable you can demo to your team.
+          </p>
+        </div>
+
+        <div class="md:col-span-7 relative rail pl-12">
+          <div class="reveal space-y-12">
+            <!-- Step 1 -->
+            <div class="relative">
+              <span class="absolute -left-12 top-1 inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-800 border border-[#2b80d4]/20 text-sm font-medium">01</span>
+              <h3 class="text-xl font-semibold tracking-tightish mb-2">Discover</h3>
+              <p class="text-slate-600 text-[15px] leading-relaxed">A 2-week immersion. We sit with your team, audit current pipelines, identify the metric that matters, and write a one-page brief everyone signs off on.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="relative">
+              <span class="absolute -left-12 top-1 inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-800 border border-[#2b80d4]/20 text-sm font-medium">02</span>
+              <h3 class="text-xl font-semibold tracking-tightish mb-2">Architect</h3>
+              <p class="text-slate-600 text-[15px] leading-relaxed">We design the smallest viable system that can grow. Pipelines, schemas, dashboards and access — all reviewed before a line of production code is written.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="relative">
+              <span class="absolute -left-12 top-1 inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-800 border border-[#2b80d4]/20 text-sm font-medium">03</span>
+              <h3 class="text-xl font-semibold tracking-tightish mb-2">Build &amp; ship</h3>
+              <p class="text-slate-600 text-[15px] leading-relaxed">Weekly demos. Code reviewed in your repo, tests gated in your CI, dashboards landed in your BI tool. You see progress every Friday — never quarterly.</p>
+            </div>
+            <!-- Step 4 -->
+            <div class="relative">
+              <span class="absolute -left-12 top-1 inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-800 border border-[#2b80d4]/20 text-sm font-medium">04</span>
+              <h3 class="text-xl font-semibold tracking-tightish mb-2">Hand off &amp; coach</h3>
+              <p class="text-slate-600 text-[15px] leading-relaxed">We don&apos;t want to live in your stack forever. Documentation, runbooks and a 90-day coaching tail mean your team owns it when we step back.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section id="about" class="relative py-28 sm:py-36 px-4 sm:px-6">
+      <div class="mx-auto max-w-7xl grid md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-7">
+          <div class="reveal text-xs uppercase tracking-[0.25em] text-accent-soft mb-3">04 · About</div>
+          <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter2 leading-tight">
+            We turn data into <span class="grad-thin">actionable insights</span> that drive <em class="font-serif text-[#1b2d5e] font-semibold">growth.</em>
+          </h2>
+          <div class="reveal reveal-delay-2 mt-8 space-y-5 text-slate-700 leading-relaxed max-w-2xl text-[17px]">
+            <p>At InsightStack Solutions, we&apos;re passionate about transforming data into decisions you can act on. With deep expertise in data analysis, data engineering, business intelligence and AWS cloud, we empower organisations to make informed choices that compound into growth and innovation.</p>
+            <p>Founded by a team of seasoned data professionals, our mission is to simplify complex data challenges. We leverage cutting-edge tools and methodologies to deliver tailored solutions for your unique business needs — and we collaborate closely so every strategy aligns with your goals and vision.</p>
+            <p>Our practice is led by <span class="text-[#1b2d5e] font-medium">Anil Kondla</span>, who has spent nearly a decade designing, building and shipping data platforms inside <span class="text-[#1b2d5e]">Amazon, Experian, Elevance Health, OpenText</span> and <span class="text-[#1b2d5e]">Kellogg</span>. That enterprise-grade engineering is what we now bring to teams of every size.</p>
+          </div>
+        </div>
+
+        <aside class="reveal md:col-span-5 glass rounded-3xl p-7 sm:p-8">
+          <div class="text-xs uppercase tracking-[0.2em] text-slate-600 mb-5">What you actually get</div>
+          <ul class="space-y-4 text-[15px]">
+            <li class="flex gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
+              <svg viewBox="0 0 24 24" fill="none" class="h-3 w-3"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>Senior engineers on every call — no account managers between you and the work.</span></li>
+            <li class="flex gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
+              <svg viewBox="0 0 24 24" fill="none" class="h-3 w-3"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>Work delivered in <em>your</em> repo, in <em>your</em> CI. You own everything from day one.</span></li>
+            <li class="flex gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
+              <svg viewBox="0 0 24 24" fill="none" class="h-3 w-3"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>Fixed-scope or hourly. We&apos;ll suggest the model that&apos;s honest for your stage.</span></li>
+            <li class="flex gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
+              <svg viewBox="0 0 24 24" fill="none" class="h-3 w-3"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>30-day exit clause on every engagement. Reputation is the only thing that compounds.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================== USE CASES ============================== -->
+    <section id="usecases" class="relative py-28 sm:py-36 px-4 sm:px-6">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <div class="reveal text-xs uppercase tracking-[0.25em] text-accent-soft mb-3">05 · Use cases</div>
+            <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter2 leading-tight max-w-3xl">
+              The data problems<br />we&apos;ve <span class="grad-thin">solved at scale.</span>
+            </h2>
+          </div>
+          <p class="reveal reveal-delay-2 max-w-sm text-slate-600 text-sm leading-relaxed">
+            Patterns we&apos;ve delivered for Fortune-500 and high-growth teams alike — across payments, healthcare, retail and marketplaces.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <!-- UC 1 -->
+          <article class="reveal card-glow glass rounded-3xl p-7 group flex flex-col">
+            <div class="orbit mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-soft"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold tracking-tightish mb-2">Fraud, theft &amp; payment integrity</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-5">Pipelines that flag duplicate invoices, expense fraud and anomalous claims before money moves — balancing friction so good actors stay unblocked.</p>
+            <div class="mt-auto pt-2 text-[13px] text-slate-600 font-mono">Amazon · Elevance Health</div>
+          </article>
+
+          <!-- UC 2 -->
+          <article class="reveal reveal-delay-1 card-glow glass rounded-3xl p-7 group flex flex-col">
+            <div class="orbit mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-cyan"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold tracking-tightish mb-2">Customer experience analytics</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-5">Stitch every touchpoint into one view, then surface the insights that lift satisfaction and optimise service delivery across the journey.</p>
+            <div class="mt-auto pt-2 text-[13px] text-slate-600 font-mono">Experian</div>
+          </article>
+
+          <!-- UC 3 -->
+          <article class="reveal reveal-delay-2 card-glow glass rounded-3xl p-7 group flex flex-col">
+            <div class="orbit mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-lime"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 7h6M9 11h6M9 15h4M3 21h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold tracking-tightish mb-2">Healthcare &amp; claims reporting</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-5">Self-service portals for Medicaid/Medicare risk-adjustment and claims integrity — slicing by region, contract or provider with audit-ready accuracy.</p>
+            <div class="mt-auto pt-2 text-[13px] text-slate-600 font-mono">Elevance Health · CarelonRx</div>
+          </article>
+
+          <!-- UC 4 -->
+          <article class="reveal card-glow glass rounded-3xl p-7 group flex flex-col">
+            <div class="orbit mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent"><path d="M3 3v18h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="12" width="3" height="5" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="8" width="3" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="19" y="5" width="2" height="0.1" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold tracking-tightish mb-2">Marketplace &amp; product analytics</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-5">dbt models and interactive dashboards that turn project activity, user engagement and platform performance into growth decisions.</p>
+            <div class="mt-auto pt-2 text-[13px] text-slate-600 font-mono">PlanHub</div>
+          </article>
+
+          <!-- UC 5 -->
+          <article class="reveal reveal-delay-1 card-glow glass rounded-3xl p-7 group flex flex-col">
+            <div class="orbit mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-soft"><path d="M3 9h4l3 9 4-16 3 7h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold tracking-tightish mb-2">Supply chain &amp; demand forecasting</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-5">Forecast demand from historical sales, optimise inventory and production schedules, and preserve history with proper slowly-changing dimensions.</p>
+            <div class="mt-auto pt-2 text-[13px] text-slate-600 font-mono">Kellogg Company</div>
+          </article>
+
+          <!-- UC 6 -->
+          <article class="reveal reveal-delay-2 card-glow glass rounded-3xl p-7 group flex flex-col">
+            <div class="orbit mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-accent-cyan"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold tracking-tightish mb-2">Real-time &amp; in-memory acceleration</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed mb-5">Collapse 24-hour ETL windows into minutes with in-memory engines and Kafka streams — putting live data in front of hundreds of concurrent users.</p>
+            <div class="mt-auto pt-2 text-[13px] text-slate-600 font-mono">Kellogg Company</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TESTIMONIAL / WORK ============================== -->
+    <section id="work" class="relative py-28 sm:py-36 px-4 sm:px-6 bg-ink-950/50 border-y border-[#2b80d4]/15">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal text-xs uppercase tracking-[0.25em] text-accent-soft mb-3">Client results · Selected work</div>
+        <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter2 leading-tight max-w-4xl mb-4">
+          Real projects, shipped<br />for teams that <span class="grad-thin">measure outcomes.</span>
+        </h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-600 max-w-2xl mb-14">
+          From Fortune 500 enterprises to high-growth startups — every engagement is scoped to deliver measurable impact, not just deliverables. Here's what that looks like in practice.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Kellogg in-memory -->
+          <article class="reveal card-glow glass-soft rounded-3xl p-7 transition">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-xs uppercase tracking-wider text-slate-600">CPG · Kellogg</span>
+              <span class="text-xs font-mono text-accent-soft">2017</span>
+            </div>
+            <div class="text-5xl font-semibold tracking-tighter2 mb-2 grad-text">20x</div>
+            <p class="text-sm font-medium text-slate-700 mb-2">Logistics ETL: 24 hrs &rarr; 43 minutes</p>
+            <p class="text-sm text-slate-600 mb-6">In-memory compute and Kafka ingestion rebuilt a slow overnight pipeline into a near-real-time feed — no more waiting until morning for yesterday&apos;s numbers.</p>
+            <div class="text-[13px] text-slate-600">SingleStore · Kafka · SAP Data Services</div>
+          </article>
+
+          <!-- CarelonRx GRRP -->
+          <article class="reveal reveal-delay-1 card-glow glass-soft rounded-3xl p-7 transition">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-xs uppercase tracking-wider text-slate-600">Healthcare · CarelonRx</span>
+              <span class="text-xs font-mono text-accent-soft">2019–21</span>
+            </div>
+            <div class="text-5xl font-semibold tracking-tighter2 mb-2 grad-text">+35%</div>
+            <p class="text-sm font-medium text-slate-700 mb-2">Billing accuracy &amp; payment visibility</p>
+            <p class="text-sm text-slate-600 mb-6">P&amp;L reconciliation reporting gave finance teams clarity they never had — 35% better billing tracking, 20% faster reports, and self-service access that cut analyst bottlenecks entirely.</p>
+            <div class="text-[13px] text-slate-600">Tableau · MongoDB · MongoSQL</div>
+          </article>
+
+          <!-- Elevance Pathfinder -->
+          <article class="reveal reveal-delay-2 card-glow glass-soft rounded-3xl p-7 transition">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-xs uppercase tracking-wider text-slate-600">Healthcare · Elevance</span>
+              <span class="text-xs font-mono text-accent-soft">2021–22</span>
+            </div>
+            <div class="text-5xl font-semibold tracking-tighter2 mb-2 grad-text">+30%</div>
+            <p class="text-sm font-medium text-slate-700 mb-2">User engagement on risk-adjustment portal</p>
+            <p class="text-sm text-slate-600 mb-6">Pathfinder went from a tool people avoided to one they relied on daily — 30% more engagement, 20% faster submissions, and 25% better reporting accuracy from day one.</p>
+            <div class="text-[13px] text-slate-600">Tableau · Teradata · Snowflake</div>
+          </article>
+
+          <!-- Amazon TFAW -->
+          <article class="reveal card-glow glass-soft rounded-3xl p-7 transition">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-xs uppercase tracking-wider text-slate-600">Payments · Amazon</span>
+              <span class="text-xs font-mono text-accent-soft">2022–24</span>
+            </div>
+            <div class="text-5xl font-semibold tracking-tighter2 mb-2 grad-text">Fraud&nbsp;&darr;</div>
+            <p class="text-sm font-medium text-slate-700 mb-2">Payee-fraud detection at scale</p>
+            <p class="text-sm text-slate-600 mb-6">Automated fraud detection pipelines with real-time case creation, audit trails, and forecasting models — protecting revenue without creating friction for legitimate payees.</p>
+            <div class="text-[13px] text-slate-600">Redshift · QuickSight · SageMaker · Python</div>
+          </article>
+
+          <!-- Experian MyCX -->
+          <article class="reveal reveal-delay-1 card-glow glass-soft rounded-3xl p-7 transition">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-xs uppercase tracking-wider text-slate-600">Data services · Experian</span>
+              <span class="text-xs font-mono text-accent-soft">2024–25</span>
+            </div>
+            <div class="text-5xl font-semibold tracking-tighter2 mb-2 grad-text">Zero&nbsp;ops</div>
+            <p class="text-sm font-medium text-slate-700 mb-2">Fully automated cloud data infrastructure</p>
+            <p class="text-sm text-slate-600 mb-6">Customer-experience analytics on AWS — Glue ETL into Redshift and RDS, with every resource provisioned via Terraform and CloudFormation so the team ships changes, not tickets.</p>
+            <div class="text-[13px] text-slate-600">AWS Glue · Redshift · S3 · Terraform</div>
+          </article>
+
+          <!-- OpenText PCS -->
+          <article class="reveal reveal-delay-2 card-glow glass-soft rounded-3xl p-7 transition">
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-xs uppercase tracking-wider text-slate-600">Legal tech · OpenText</span>
+              <span class="text-xs font-mono text-accent-soft">2022</span>
+            </div>
+            <div class="text-5xl font-semibold tracking-tighter2 mb-2 grad-text">AI</div>
+            <p class="text-sm font-medium text-slate-700 mb-2">AI-powered legal complaint intelligence</p>
+            <p class="text-sm text-slate-600 mb-6">Serverless, multi-tenant investigations platform with AI-driven NLP models that extract key facts from legal complaints in seconds — turning weeks of manual review into instant, structured insight.</p>
+            <div class="text-[13px] text-slate-600">Python · AWS Fargate · RDS · ML</div>
+          </article>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="reveal mt-14 flex flex-wrap gap-x-10 gap-y-4 items-center border-t border-[#2b80d4]/15 pt-10 text-sm text-slate-600">
+          <span class="text-slate-600 font-medium">Trusted by teams at</span>
+          <span>Kellogg</span>
+          <span>Amazon</span>
+          <span>Experian</span>
+          <span>Elevance Health</span>
+          <span>CarelonRx</span>
+          <span>OpenText</span>
+        </div>
+
+        <!-- Testimonial -->
+        <figure class="reveal mt-14 sm:mt-16 max-w-4xl glass rounded-3xl p-8 sm:p-10">
+          <svg viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-accent-soft mb-5"><path d="M7 11h-1a3 3 0 0 1 0-6h1a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H4M19 11h-1a3 3 0 0 1 0-6h1a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <blockquote class="text-xl sm:text-2xl md:text-3xl font-serif italic text-slate-700 leading-snug tracking-tightish">
+            &ldquo;They walked in, rebuilt the worst part of our stack, taught two of our engineers how it worked, and walked out 90 days later. That&apos;s the engagement everyone promises and no one delivers.&rdquo;
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-4 text-sm">
+            <span class="inline-flex h-10 w-10 rounded-full bg-gradient-to-br from-accent to-accent-cyan shrink-0"></span>
+            <span>
+              <span class="block font-medium text-[#1b2d5e]">Head of Data Engineering</span>
+              <span class="block text-slate-600">Series-B SaaS company &middot; 2025</span>
+            </span>
+            <a href="#contact" class="ml-auto btn btn-primary text-xs hidden sm:inline-flex">Work with us
+              <svg viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- ============================== CTA BANNER ============================== -->
+    <section class="relative py-28 sm:py-36 px-4 sm:px-6">
+      <div class="mx-auto max-w-6xl reveal relative overflow-hidden rounded-[2rem] p-10 sm:p-16 md:p-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/30 via-accent-cyan/15 to-transparent"></div>
+        <div class="absolute inset-0 grid-floor opacity-50 pointer-events-none"></div>
+        <div class="relative">
+          <h3 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter2 leading-[1.02] max-w-3xl">
+            Have a data problem that&apos;s been on the back-burner for a quarter?
+          </h3>
+          <p class="mt-5 max-w-xl text-slate-700 text-lg leading-relaxed">
+            Book a free 30-minute consultation. Worst case, you leave with a one-page diagnostic you can hand to anyone.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-primary">Book a free consultation
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="mailto:contact@insightstacksolutions.com" class="btn btn-ghost">contact@insightstacksolutions.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section id="contact" class="relative py-20 sm:py-28 px-4 sm:px-6">
+      <div class="mx-auto max-w-7xl grid md:grid-cols-12 gap-10 md:gap-14">
+        <div class="md:col-span-5">
+          <div class="reveal text-xs uppercase tracking-[0.25em] text-accent-soft mb-3">07 · Contact</div>
+          <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl font-semibold tracking-tighter2 leading-tight mb-6">
+            Tell us what&apos;s broken.
+          </h2>
+          <p class="reveal reveal-delay-2 text-slate-600 leading-relaxed max-w-md">
+            We reply within one business day, from a real engineer (no bots, no first-touch sales).
+          </p>
+
+          <div class="reveal reveal-delay-3 mt-10 space-y-5 text-sm">
+            <a href="mailto:contact@insightstacksolutions.com" class="group flex items-start gap-4">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#2b80d4]/8 border border-[#2b80d4]/20 group-hover:border-accent/40 transition">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 text-accent-soft"><path d="M3 7l9 6 9-6M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>
+                <span class="block text-slate-600 text-xs uppercase tracking-wider">Email</span>
+                <span class="block text-[#1b2d5e]">contact@insightstacksolutions.com</span>
+              </span>
+            </a>
+            <a href="tel:+919700552359" class="group flex items-start gap-4">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#2b80d4]/8 border border-[#2b80d4]/20 group-hover:border-accent/40 transition">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 text-accent-cyan"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.77.64 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.21a2 2 0 0 1 2.11-.45c.83.3 1.7.52 2.6.64A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>
+                <span class="block text-slate-600 text-xs uppercase tracking-wider">Phone</span>
+                <span class="block text-[#1b2d5e]">+91 97005 52359</span>
+              </span>
+            </a>
+            <div class="group flex items-start gap-4">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#2b80d4]/8 border border-[#2b80d4]/20">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 text-accent-lime"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <span>
+                <span class="block text-slate-600 text-xs uppercase tracking-wider">Studio</span>
+                <span class="block text-[#1b2d5e]">Nallagandla, Hyderabad · 500019, India</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="contact-form" class="reveal md:col-span-7 glass rounded-3xl p-7 sm:p-9 space-y-5" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="block text-xs uppercase tracking-wider text-slate-600 mb-2">Name</span>
+              <input required name="name" type="text" placeholder="Ada Lovelace" class="w-full rounded-xl bg-ink-900/80 border border-[#2b80d4]/20 focus:border-accent focus:ring-1 focus:ring-accent/40 px-4 py-3 text-sm text-[#1b2d5e] placeholder:text-slate-600 outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="block text-xs uppercase tracking-wider text-slate-600 mb-2">Work email</span>
+              <input required name="email" type="email" placeholder="you@company.com" class="w-full rounded-xl bg-ink-900/80 border border-[#2b80d4]/20 focus:border-accent focus:ring-1 focus:ring-accent/40 px-4 py-3 text-sm text-[#1b2d5e] placeholder:text-slate-600 outline-none transition" />
+            </label>
+          </div>
+          <label class="block">
+            <span class="block text-xs uppercase tracking-wider text-slate-600 mb-2">Company</span>
+            <input name="company" type="text" placeholder="Acme Inc." class="w-full rounded-xl bg-ink-900/80 border border-[#2b80d4]/20 focus:border-accent focus:ring-1 focus:ring-accent/40 px-4 py-3 text-sm text-[#1b2d5e] placeholder:text-slate-600 outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="block text-xs uppercase tracking-wider text-slate-600 mb-2">What&apos;s the problem?</span>
+            <textarea required name="message" rows="5" placeholder="Our nightly pipeline keeps failing and our finance dashboards don't match Stripe…" class="w-full rounded-xl bg-ink-900/80 border border-[#2b80d4]/20 focus:border-accent focus:ring-1 focus:ring-accent/40 px-4 py-3 text-sm text-[#1b2d5e] placeholder:text-slate-600 outline-none resize-none transition"></textarea>
+          </label>
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <span class="text-xs text-slate-600">By submitting, you agree to our <a href="privacypolicy.html" class="underline-offset-4 hover:underline">privacy policy</a>.</span>
+            <button type="submit" class="btn btn-primary">
+              Send brief
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p id="form-success" class="hidden mt-3 text-sm text-accent-lime">Thanks — we&apos;ll be in touch shortly.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================== FOOTER ============================== -->
+    <footer class="relative px-4 sm:px-6 pt-16 pb-10 border-t border-[#2b80d4]/15">
+      <div class="mx-auto max-w-7xl grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-3 mb-5">
+            <img src="Logo.jpg" alt="InsightStack Solutions logo" class="h-20 w-auto object-contain" />
+          </div>
+          <p class="text-slate-600 text-sm max-w-sm leading-relaxed">
+            A small, senior data &amp; cloud studio working from Hyderabad with teams across India, the UK and the US.
+          </p>
+        </div>
+
+        <div class="md:col-span-3">
+          <div class="text-xs uppercase tracking-[0.2em] text-slate-600 mb-4">Sitemap</div>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li><a href="#services" class="hover:text-[#2b80d4] transition">Services</a></li>
+            <li><a href="#process" class="hover:text-[#2b80d4] transition">Process</a></li>
+            <li><a href="#about" class="hover:text-[#2b80d4] transition">About</a></li>
+            <li><a href="#usecases" class="hover:text-[#2b80d4] transition">Use Cases</a></li>
+            <li><a href="#work" class="hover:text-[#2b80d4] transition">Work</a></li>
+            <li><a href="#contact" class="hover:text-[#2b80d4] transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <div class="text-xs uppercase tracking-[0.2em] text-slate-600 mb-4">Elsewhere</div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.linkedin.com/company/thanks-technology" target="_blank" rel="noopener" class="btn btn-ghost text-xs !py-2 !px-3">LinkedIn</a>
+            <a href="https://www.facebook.com/thankstechnology" target="_blank" rel="noopener" class="btn btn-ghost text-xs !py-2 !px-3">Facebook</a>
+            <a href="https://x.com/thankstechno" target="_blank" rel="noopener" class="btn btn-ghost text-xs !py-2 !px-3">X / Twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-7xl mt-14 pt-6 border-t border-[#2b80d4]/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600">
+        <div>© 2026 InsightStack Solutions · All rights reserved.</div>
+        <div class="flex items-center gap-5">
+          <a href="privacypolicy.html" class="hover:text-slate-700 transition">Privacy Policy</a>
+          <span class="flex items-center gap-2"><span class="blip"></span> Currently accepting Q3 engagements</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============================== SCRIPTS ============================== -->
+  <script src="main.js"></script>
+</body>
+</html>

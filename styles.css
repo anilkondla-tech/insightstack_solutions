@@ -1,0 +1,99 @@
+/* Custom styles — Tailwind utilities are loaded via CDN */
+
+html, body { background: #ffffff; color: #1b2d5e; }
+body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* ---------- Mesh / gradient backdrop ---------- */
+.mesh-bg {
+  background:
+    radial-gradient(60% 50% at 12% 18%, rgba(43, 128, 212, 0.07) 0%, transparent 60%),
+    radial-gradient(45% 40% at 88% 22%, rgba(27, 45, 94, 0.05) 0%, transparent 60%),
+    radial-gradient(55% 60% at 70% 90%, rgba(168, 200, 232, 0.10) 0%, transparent 60%),
+    #ffffff;
+}
+.grain::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.grid-floor {
+  background-image:
+    linear-gradient(rgba(43,128,212,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,128,212,0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* ---------- Glow text & gradient text ---------- */
+.grad-text {
+  background: linear-gradient(120deg, #1b2d5e 0%, #2b80d4 50%, #6aaee8 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.grad-thin {
+  background: linear-gradient(90deg, #2b80d4 0%, #6aaee8 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- Glass / cards ---------- */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(240,246,255,0.90));
+  backdrop-filter: blur(8px) saturate(130%);
+  -webkit-backdrop-filter: blur(8px) saturate(130%);
+  border: 1px solid rgba(43,128,212,0.18);
+  box-shadow: 0 4px 24px rgba(27,45,94,0.08);
+}
+.glass-soft { background: rgba(238,244,252,0.80); border: 1px solid rgba(43,128,212,0.12); }
+.card-glow { position: relative; overflow: hidden; isolation: isolate; }
+.card-glow::before {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+  background: conic-gradient(from var(--a, 0deg), transparent 0%, transparent 65%, #1b2d5e 80%, #2b80d4 95%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity .4s;
+}
+.card-glow:hover::before { opacity: 1; animation: spin 6s linear infinite; }
+@keyframes spin { to { --a: 360deg; } }
+@property --a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+/* ---------- Buttons ---------- */
+.btn { position: relative; display: inline-flex; align-items: center; gap: .55rem; padding: .85rem 1.25rem; border-radius: 999px; font-weight: 500; font-size: .9rem; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.btn-primary { color: #fff; background: linear-gradient(135deg, #2b80d4, #1b2d5e); box-shadow: 0 6px 30px rgba(43, 128, 212, .35); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 128, 212, .50); }
+.btn-ghost { color: #1b2d5e; background: rgba(43,128,212,0.08); border: 1px solid rgba(43,128,212,0.25); }
+.btn-ghost:hover { background: rgba(43,128,212,0.14); transform: translateY(-2px); }
+
+/* ---------- Marquee ---------- */
+.marquee { display: flex; gap: 4rem; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); }
+.marquee-track { display: flex; gap: 4rem; flex-shrink: 0; animation: scroll 28s linear infinite; padding-right: 4rem; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+/* ---------- Reveal ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .08s; }
+.reveal-delay-2 { transition-delay: .16s; }
+.reveal-delay-3 { transition-delay: .24s; }
+
+/* ---------- Nav scroll state ---------- */
+.nav { transition: background-color .3s ease, border-color .3s ease, padding .3s ease; }
+.nav.scrolled { background-color: rgba(255,255,255,0.90); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(43,128,212,0.18); box-shadow: 0 2px 16px rgba(27,45,94,0.08); }
+
+/* ---------- Live blip ---------- */
+.blip { position: relative; display: inline-flex; width: .5rem; height: .5rem; border-radius: 999px; background: #4db8f0; }
+.blip::after { content: ''; position: absolute; inset: 0; border-radius: 999px; background: #4db8f0; animation: pulse 1.6s ease-out infinite; }
+@keyframes pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(2.6); opacity: 0; } }
+
+/* ---------- Hero animated number ticker ---------- */
+.ticker { font-variant-numeric: tabular-nums; }
+
+/* ---------- Service icon orbit ---------- */
+.orbit { position: relative; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(43,128,212,0.12), rgba(168,200,232,0.20)); border: 1px solid rgba(43,128,212,0.22); }
+
+/* ---------- Process step rail ---------- */
+.rail::before { content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, transparent, rgba(27,45,94,.8), rgba(43,128,212,.6), transparent); }
+
+/* ---------- Scrollbar (subtle) ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f0f6ff; }
+::-webkit-scrollbar-thumb { background: #a8c8e8; border-radius: 999px; }
