@@ -1,0 +1,1 @@
+# insightstack_solutions
